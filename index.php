@@ -7,9 +7,7 @@
 
 function orderPizza($pizzaType, $recipient) {
 
-echo 'Creating new order... <br>';
-$toPrint = 'A ';
-$toPrint .= $pizzaType;
+echo 'Creating new order... <br> A ' .$pizzaType;
 $pizzaCost = calculateCosts($pizzaType);
 
 
@@ -24,11 +22,9 @@ if($recipient == 'Koen')
     $address = 'BeCode office';
 }
 
-
-$toPrint .=   ' pizza should be sent to ' . $recipient . ". <br>The address: {$address}.";
-echo $toPrint; echo '<br>';
+echo ' pizza should be sent to ' . $recipient . ". <br>The address: {$address}. <br>";
 echo'The bill is €'.$pizzaCost.'.<br>';
-echo "Order finished.<br><br>";
+echo "Order finished.<br><br><hr><hr>";
 }
 
 // This function will calculate the costs of the given pizza
