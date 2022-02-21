@@ -1,28 +1,29 @@
 <?php
 
-// This function will find the appropriate pizza type, and a recipient for that pizza;
+// This function lays the groundwork
+// first some text is prepared, and it will be appended with the pizza type.
+// Also, a variable is imported from another function, this variable contains the price
+// finally, an algorithm will check who we are dealing with and where they are at.
 
 function orderPizza($pizzaType, $recipient) {
 
-$type = $pizzaType;
 echo 'Creating new order... <br>';
 $toPrint = 'A ';
 $toPrint .= $pizzaType;
-$pizzaCost = calculateCosts($type);
+$pizzaCost = calculateCosts($pizzaType);
 
-
-$address = 'unknown';
 
 if($recipient == 'Koen')
 {
     $address = 'a yacht in Antwerp';
-} elseif ($recipient == 'manuele')
+} elseif ($recipient == 'Manuele')
 {
     $address = 'somewhere in Belgium';
 } elseif ($recipient == 'students') 
 {
     $address = 'BeCode office';
 }
+
 
 $toPrint .=   ' pizza should be sent to ' . $recipient . ". <br>The address: {$address}.";
 echo $toPrint; echo '<br>';
@@ -33,7 +34,6 @@ echo "Order finished.<br><br>";
 // This function will calculate the costs of the given pizza
 function calculateCosts($pizzaType)
 {
-$cost = 'unknown';
     if ($pizzaType == 'marguerita') {
         $cost = 5;
     } else
@@ -53,24 +53,12 @@ $cost = 'unknown';
 return $cost;
 }
 
-
-
-function order_pizza_all()
+function orderPizzaAll()
 {
-orderPizza('calzone', 'koen');
-orderPizza('marguerita', 'manuele');
+orderPizza('calzone', 'Koen');
+orderPizza('marguerita', 'Manuele');
 orderPizza('golden', 'students');
 }
 
-function make_Allhappy($do_it) {
-    if ($do_it) 
-    {
-    order_pizza_all();
-    } else 
-    {
-    }
-}
+orderPizzaAll();
 
-make_Allhappy(true);
-
-/* require "index.php"; */
