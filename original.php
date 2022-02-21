@@ -58,7 +58,7 @@ function calc_cts($p_type)
             }
 
         if ($p_type == 'hawaii') {
-            throw new Exception('Computer says no');
+            throw new Exception('That is not a pizza!');
         }
     }
 
